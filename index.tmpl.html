@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>SASS Color Palettes</title>
+        <meta content="A collection of color palettes for use as SASS variables" name="description"/>
+        <link href="favicon.png" rel="icon" type="image/png"/>
+        <style>
+         /*!normalize.css v2.1.3 | MIT License | git.io/normalize */article,aside,details,figcaption,figure,footer,header,hgroup,main,nav,section,summary{display:block}audio,canvas,video{display:inline-block}audio:not([controls]){display:none;height:0}[hidden],template{display:none}html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}a{background:transparent}a:focus{outline:thin dotted}a:active,a:hover{outline:0}h1{font-size:2em;margin:.67em 0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}mark{background:#ff0;color:#000}code,kbd,pre,samp{font-family:monospace,serif;font-size:1em}pre{white-space:pre-wrap}q{quotes:"\201C" "\201D" "\2018" "\2019"}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:0}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}button,input,select,textarea{font-family:inherit;font-size:100%;margin:0}button,input{line-height:normal}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}textarea{overflow:auto;vertical-align:top}table{border-collapse:collapse;border-spacing:0}
+        html {
+            background: #c3c3c5;
+            overflow-y: scroll;
+        }
+        body {
+            background: #fff;
+            color: #2b2b2b;
+            font-family:"Avenir Next","Avenir","Helvetica Neue",Helvetica,Segoe,"Segoe UI","Segoe WP",Calibri,Arial,clean,sans-serif;
+        }
+        body * {
+               -moz-box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+        }
+        header { 
+            background: #34aadc;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+            line-height: 1;
+        }
+        #brand {
+            font-size: 24px;
+            font-weight: 500
+        }
+        main {
+            padding: 10px;
+            max-width: 1220px;
+            margin: 0 auto;
+        }
+        @media (max-width: 469px) {
+            main {
+                max-width: 320px;
+            }
+        }
+        @media (min-width: 470px) and (max-width: 619px) {
+            main {
+                max-width: 470px;
+            }
+        }
+        @media (min-width: 620px) and (max-width: 769px) {
+            main {
+                max-width: 620px;
+            }
+        }
+        @media (min-width: 770px) and (max-width: 919px) {
+            main {
+                max-width: 770px;
+            }
+        }
+        @media (min-width: 920px) and (max-width: 1069px) {
+            main {
+                max-width: 920px;
+            }
+        }
+        @media (min-width: 1070px) and (max-width: 1219px) {
+            main {
+                max-width: 1070px;
+            }
+        }
+        #description {
+            margin: 0 0 1em;
+            text-align: center;
+            font-style: italic;
+        }
+        footer { 
+            background: #c3c3c5;
+            padding: 10px;
+            text-align: center;
+            line-height: 1;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        li {
+            display: inline-block;
+
+        }
+        #palettes {
+        }
+        .palette {
+            margin: 2em 0 0;
+            display: block;
+        }
+        .palette:first-child {
+            margin-top: 0;
+        }
+        h2 {
+            padding: 0 5px;
+            margin: 0 0 0.25em;
+            font-weight: 500;
+        }
+        .import,
+        .uri {
+            color: #959595;
+            margin: 0 0 0.25em;
+            padding: 0 5px;
+        }
+        .import {
+            font-family: Consolas, monaco, monospace;
+        }
+        .uri a {
+            color: #34aadc;
+            text-decoration: none;
+        }
+        .palette li {
+            margin: 5px;
+            text-align: center;
+            width: 140px;
+            box-shadow: 0 0 5px rgba(0,0,0,0);
+               -moz-transition: box-shadow 0.25s linear;
+                -ms-transition: box-shadow 0.25s linear;
+            -webkit-transition: box-shadow 0.25s linear;
+                    transition: box-shadow 0.25s linear;
+        }
+        .palette li:focus {
+            outline: 0;
+            background: #fff;
+            box-shadow: 0 0 5px rgba(0,0,0,0.25);
+        }
+        .swatch {
+            display: block;
+            width: 100%;
+            padding: 100% 0 0;
+        }
+        .name,
+        .hex,
+        .rgb,
+        .hsl {
+            display: block;
+        }
+        .name {
+            font-weight: 500;
+            margin: 0.5em 0 0;
+        }
+        .hex,
+        .rgb,
+        .hsl {
+            margin: 0.25em 0 0;
+            color: #959595;
+            border: 0;
+            padding: 0;
+            text-align: center;
+            outline: 0;
+            width: 100%;
+        }
+        .hex {
+            text-transform: uppercase;
+        }
+        #primary-nav ul {
+            margin: 0 -0.5em;
+        }
+        #primary-nav li {
+            margin: 0.5em;
+        }
+        #primary-nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+        </style>
+     </head>
+     <body>
+        <header>
+            <h1 id="brand">SASS Color Palettes</h1>
+            <nav id="primary-nav"></nav>
+        </header>
+        <main>
+            <p id="description">A collection of color palettes for use as SASS variables</p>
+        </main>
+        <footer>
+            <iframe allowtransparency="true" frameborder="0" height="30" scrolling="0" src="http://ghbtns.com/github-btn.html?user=dryan&amp;repo=color-palettes&amp;type=watch&amp;count=true&amp;size=large" width="130">
+            </iframe>
+            <iframe allowtransparency="true" frameborder="0" height="30" scrolling="0" src="http://ghbtns.com/github-btn.html?user=dryan&amp;repo=color-palettes&amp;type=fork&amp;count=true&amp;size=large" width="130">
+            </iframe>
+        </footer>
+        <script>
+            (function(w, d) {
+                var
+                input,
+                inputs          =   d.getElementsByTagName("input"),
+                i               =   inputs.length,
+                inputHandler    =   function(event) {
+                    if(event.target.tagName.toLowerCase() === "input") {
+                        input   =   event.target;
+                        setTimeout(function() {
+                            if(input) {
+                                input.selectionStart    =   0;
+                                input.selectionEnd      =   input.value.length;
+                            }
+                        }, 50);
+                    }
+                }
+                while(i--) {
+                    inputs[i].setAttribute("data-value", inputs[i].value || "");
+                }
+                if(d.body && d.body.addEventListener) {
+                    d.body.addEventListener(
+                        "focus", 
+                        inputHandler, 
+                        true
+                    );
+                    d.body.addEventListener(
+                        "click", 
+                        inputHandler, 
+                        true
+                    );
+                    d.body.addEventListener(
+                        "keyup",
+                        function(event) {
+                            if(event.target.getAttribute("data-value") && event.target.getAttribute("data-value") !== event.target.value) {
+                                event.target.value          =   event.target.getAttribute("data-value");
+                                event.target.selectionStart =   0;
+                                event.target.selectionEnd   =   event.target.value.length;
+                            }
+                        },
+                        true
+                    );
+                }
+            })(window, document);
+        </script>
+        <script type="text/javascript">
+         var _gaq = _gaq || [];_gaq.push(['_setAccount', 'UA-3625251-12']);_gaq.push(['_trackPageview']);(function() {var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);})();
+        </script>
+    </body>
+</html>
