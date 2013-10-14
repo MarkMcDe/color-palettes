@@ -136,8 +136,8 @@ for palette in keys:
         li.append(span_swatch)
         li.append(span_name)
         li.append(input_hex)
-        li.append(input_rgb)
-        li.append(input_hsl)
+        # li.append(input_rgb)
+        # li.append(input_hsl)
         group_ul.append(li)
         li_tab_index        +=  1
     group_li.append(group_ul)
